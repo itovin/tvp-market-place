@@ -1,0 +1,49 @@
+# =========================
+# 🔐 ENV FILES (NEVER COMMIT SECRETS)
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# 🟢 BACKEND - Spring Boot (Maven)
+# =========================
+backend/target/
+backend/*.log
+backend/.env
+
+# Maven wrapper is usually kept (recommended)
+# backend/.mvn/   ← keep this (DO NOT ignore)
+# backend/mvnw
+# backend/mvnw.cmd
+
+# =========================
+# 🔵 FRONTEND - React + Vite
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/pnpm-debug.log*
+
+# =========================
+# 🧠 IDE (IntelliJ IDEA + VS Code)
+# =========================
+.idea/
+*.iml
+
+.vscode/
+*.code-workspace
+
+# =========================
+# 💻 OS GENERATED FILES
+# =========================
+.DS_Store
+Thumbs.db
