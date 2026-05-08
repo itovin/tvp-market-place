@@ -2,6 +2,8 @@ package com.tierraverdemp.backend.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -35,6 +37,13 @@ public class GlobalExceptionHandler {
                         "field", field,
                         "message", e.getMessage()
                 )
+        );
+    }
+
+    @ExceptionHandler({BadCredentialsException.class})
+    public ResponseEntity<?> handleLoginFailedException(BadCredentialsException e){
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(
+                Map.of("message", e.getMessage())
         );
     }
 }

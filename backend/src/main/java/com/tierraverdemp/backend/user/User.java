@@ -30,10 +30,15 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    public User(String name, String email, String username, String password){
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private UserRole role = UserRole.USER;
+
+    public User(String name, String email, String username, String password, UserRole role){
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 }

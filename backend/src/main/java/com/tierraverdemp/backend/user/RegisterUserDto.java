@@ -4,9 +4,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+@AllArgsConstructor
 @Getter
 public class RegisterUserDto {
 
@@ -24,4 +26,6 @@ public class RegisterUserDto {
     @NotBlank
     @Size(min = 8, max = 30, message = "Password must be 8 to 30 characters long")
     private String password;
+
+    private UserRole role;
 }
